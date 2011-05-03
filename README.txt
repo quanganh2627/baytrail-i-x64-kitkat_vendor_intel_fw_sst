@@ -7,4 +7,7 @@ Apr 26 2011: Ramesh Babu K V: Audio FW Ver.03.00.05
 	The fix involves implementing a fail recovery mechanism for the issue of LPE FW pipeline stall when
 	the Input DMA(DDR->LPE DRAM) is delayed due to system conditions like delay in SCU FW response
 	for DDR LINK_UP message.
- 
+May 03 2011: Rohit K Sindhu: Audio FW Ver.03.00.06
+	BZ 1589
+	This fix is for audio playback with odd period sizes and volume control enabled. In order to fix this
+	problem the DMA latency buffer is changed to 4ms from 2ms.
