@@ -11,3 +11,7 @@ May 03 2011: Rohit K Sindhu: Audio FW Ver.03.00.06
 	BZ 1589
 	This fix is for audio playback with odd period sizes and volume control enabled. In order to fix this
 	problem the DMA latency buffer is changed to 4ms from 2ms.
+May 31 2011: Lakshmi Vinnakota: Audio FW Ver.03.00.08
+	BZ 2935 
+	This Firmware disables PTI logging which is required for LPMP3 to work, as PTI does not
+	work in LPMP3(S0i1) mode.
