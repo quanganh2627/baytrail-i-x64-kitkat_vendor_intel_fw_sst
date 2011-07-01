@@ -27,3 +27,10 @@ June 21 2011: Rohit Kumar Sindhu: Audio FW Ver.03.00.10
 	BZ3652 - Audio FW support for LPMP3 @ 19.2 MHz
 	Currently for LPMP3 usecase, LPE runs at 50MHz in PLL mode. With this fix, LPE will run at 19.2MHz in
 	Oscillator mode in LPMP3 usecase.
+June 25 2011: Rohit Kumar Sindhu: Audio FW Ver.03.00.11
+	BZ2271 - After taking some images, no shutter sound when capturing the image
+	BZ3383 - Buffer underrun and pcm write error is with buffer time 20000 
+	and period size 10000
+	This firmware fixes are to reset all pipeline buffers whenever DROP message is received, 
+	as in both these cases, the issue observed is that input DMA stops randomly, 
+	when continuous START and DROP messages are received.
