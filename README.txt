@@ -34,3 +34,16 @@ June 25 2011: Rohit Kumar Sindhu: Audio FW Ver.03.00.11
 	This firmware fixes are to reset all pipeline buffers whenever DROP message is received, 
 	as in both these cases, the issue observed is that input DMA stops randomly, 
 	when continuous START and DROP messages are received.
+July 14 2011: Sanyog Kale: Audio FW Ver.03.00.12
+	BZ 1795 - There.s no click sound when video starts or stops to record (50%-re-producibility)
+	BZ 3383 - Buffer underrun and pcm write error is with buffer time 20000 and period size 10000
+	BZ 4213 - If long run playback goes beyong six hrs, the audio quality gets poor
+	BZ 4305 - Power impact: Uneven SST driver wakes seen in ftrace during Music playback
+        BZ 4867 - music stop sometimes when click power key 
+	This issue is observed occasionally when underrun occurs and drop is received in FW, the 
+	Input DMA is not initiated in subsequent start stream message. Further pointer update was 
+	not happening at period boundaries after few hours which may cause periodic underruns
+	leading to glitches or noise.
+	Fix is to reset stream context appropriately when drop is received to ensure Input DMA is
+	initiated always. Further the pointer update mechanism is optimized to handle small period sizes.
+
