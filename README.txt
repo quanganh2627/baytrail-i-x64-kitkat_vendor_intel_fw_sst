@@ -46,4 +46,15 @@ July 14 2011: Sanyog Kale: Audio FW Ver.03.00.12
 	leading to glitches or noise.
 	Fix is to reset stream context appropriately when drop is received to ensure Input DMA is
 	initiated always. Further the pointer update mechanism is optimized to handle small period sizes.
-
+August 12 2011: Sanyog Kale: Audio FW Ver.03.00.14
+        BZ 4482 - The alarm/incoming call runs but doesn't ring at the beginning of voice recording.
+	BZ 4951 - The ringtone of the SMS doesn't play when recording video.
+	BZ 5149 - when alsa_aplay and alsa_arecord are used at the same time with buffer time 20000 
+       	and period size 10000 alsa_aplay plays silent
+        BZ 5700 - There.s no click sound when video starts or stops to record (10%-re-producibility).
+	BZ 6054 - No ring tone from the Incoming call during video record. 
+	This issue of channel swap was observed when there was simultanoues playback
+	and capture running. Sometimes playback channels use to get swapped
+	to different channel and no audio was heard.
+	Channel swap issue is fixed and data always goes in right slot
+	when simulatenous playback and capture is performed.
