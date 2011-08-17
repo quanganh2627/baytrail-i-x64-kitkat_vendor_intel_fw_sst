@@ -58,3 +58,20 @@ August 12 2011: Sanyog Kale: Audio FW Ver.03.00.14
 	to different channel and no audio was heard.
 	Channel swap issue is fixed and data always goes in right slot
 	when simulatenous playback and capture is performed.
+August 17 2011: Rohit Kumar Sindhu: Audio FW Ver.03.00.15
+       BZ 4860 - Parameters not independent from one another
+       BZ 4895 - Unable to get parameter block
+       BZ 6487 - LPE parameters side-effected (Parameter handling layers are algorithm instance unaware)
+       BZ 6488 - Unable to set Equalizer IIR and FIR coefficients (Parameter size not constant)
+       In BZ 4860, few parameters were not required, such as filter coefficient size for stereo mono EQ and DC
+       removal module. Those parameters were removed as they were wasting lot of code. Also some of the parameters
+       who are dependent on each other were logically combined.
+       In BZ 4895, get_param() interface with modules were not selective as set_param() inteface. So Get parameter
+       interface was changed for user to selectively get the parameters. For this user is expected to send
+       a pre allocated buffer to LPE in which LPE will copy back the data which it gets from the modules.
+       In BZ 6487, we removed the local storage of the coefficients parameters, the parameters are stored only
+       in the persistance memory of the module instance, so no duplication happens. Packin and unpacking of
+       parameters are completely removed from the LPE. Now the get set request goes directly to the module.
+       In BX 6488, fixed maximum size of FIR and IIR fileter coefficients are implemented. So if the size of
+       actual parameters are less than maximum, in case of get the rest of the bytes are filled with zero,
+       and in case of set rest of the parameters are skipped.
