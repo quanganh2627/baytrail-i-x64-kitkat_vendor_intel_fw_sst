@@ -75,3 +75,15 @@ August 17 2011: Rohit Kumar Sindhu: Audio FW Ver.03.00.15
        In BX 6488, fixed maximum size of FIR and IIR fileter coefficients are implemented. So if the size of
        actual parameters are less than maximum, in case of get the rest of the bytes are filled with zero,
        and in case of set rest of the parameters are skipped.
+August 29 2011: Rohit Kumar Sindhu: Audio FW Ver.03.00.16
+       BZ 7887 - [CAMERA] Recording stress tests are failing
+       BZ 6961 - During simultaneous playback on HS and IHF, completion of Pb
+                 on either of the device(IHF or HS) stops other playback also.
+       BZ 7402 - [Audio]press soft keyboard about 30 times in recording, 
+                 no keypress tone played
+       In BZ 7887, DMA channels were not properly configured when simultaneous
+       and capture were on, so it failed during repeated stress tests.
+       In BZ 6961, support for simultaneous playback on headset and IHF devices 
+       was not there. It is enabled now.
+       In BZ 7402, the issue was again woth simultaneous capture and playback related to DMA channels setting,
+       so fix for bz7887 fixs this also.
