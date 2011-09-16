@@ -87,3 +87,10 @@ August 29 2011: Rohit Kumar Sindhu: Audio FW Ver.03.00.16
        was not there. It is enabled now.
        In BZ 7402, the issue was again woth simultaneous capture and playback related to DMA channels setting,
        so fix for bz7887 fixs this also.
+September 16 2011: Sanyog Kale: Aufio FW Ver.03.00.17
+	BZ 8868 -  [Monkey] [Audio] Sound recorder stopped unexpectedly when doing Monkey Test 
+		    on .com.android.soundrecorder
+	BZ 9874 - PnP register settings for LPE DMA - PROCTL and FIFO mode.
+	There was a condtion where Firmware use to enter into unresponsive state during clock switching
+	due to which recording use to stop and firmware use to not respond furthur. This issue is fixed.
+        Enhancement done to set PROCTL for DMA memory to memory transfers.
