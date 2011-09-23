@@ -94,3 +94,15 @@ September 16 2011: Sanyog Kale: Aufio FW Ver.03.00.17
 	There was a condtion where Firmware use to enter into unresponsive state during clock switching
 	due to which recording use to stop and firmware use to not respond furthur. This issue is fixed.
         Enhancement done to set PROCTL for DMA memory to memory transfers.
+September 23 2011: Rohit K Sindhu: Aufio FW Ver.03.00.18
+	BZ 9703 - [Camera] Capture pictures with wsHS, camera freeze
+	BZ 10149 - cannot record any more after record video many times(video-recording-stress testing)
+	BZ 10238 - [MTBF] Audio/ AudioHardwareAlsa read errors 
+	Whenever clk switching is initiated by LPE FW, it will suspend the ddr dma, 
+	during this time a race condition occurs causing the FW to be stalled.
+	Further, there was a issue with the FW internal state wrt link up/down status messages.
+	Also when there is simultaneous playback and capture like in video recording case 
+	there were frequent clock switches which we suspect to be affecting system stability.
+	Solution is to fix the dma suspend race condition and also keep LPE always at 50MHz 
+	to avoid the frequent clock switches. The FW state wrt link up/down status messages is corrected.
+	This has been observed to have improved stability of video recording stress test.
