@@ -106,3 +106,8 @@ September 23 2011: Rohit K Sindhu: Aufio FW Ver.03.00.18
 	Solution is to fix the dma suspend race condition and also keep LPE always at 50MHz 
 	to avoid the frequent clock switches. The FW state wrt link up/down status messages is corrected.
 	This has been observed to have improved stability of video recording stress test.
+October 04 2011: Rohit K Sindhu: Aufio FW Ver.03.00.19
+	BZ 10967 - PNW SC_AE_LEP_DMA0 / DMA1 CFG0 reg configuration needs to be corrected. details inside.
+	When PROCTL bits in DMA CFG reg are set to the PnP taskforce recommended value
+	of '010b' it is causing audio DMA failure resulting in fabric error because of posted writes.
+	This LPE FW will set PROCTL bits to '000'b value to disable posted writes. 
