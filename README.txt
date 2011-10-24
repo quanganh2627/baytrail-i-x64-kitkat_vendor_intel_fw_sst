@@ -111,3 +111,10 @@ October 04 2011: Rohit K Sindhu: Aufio FW Ver.03.00.19
 	When PROCTL bits in DMA CFG reg are set to the PnP taskforce recommended value
 	of '010b' it is causing audio DMA failure resulting in fabric error because of posted writes.
 	This LPE FW will set PROCTL bits to '000'b value to disable posted writes. 
+October 24 2011: Lakshmi N Vinnakota : Audio FW Ver.03.00.20
+	BZ 9702 - (main camera) video recorder stress test failed
+	Whenever DROP is received for either playback or capture stream, audio FW was disabling the DMA
+	transfer in progress by directly disabling the channel for the peripheral transfers. This causes
+	DMA burst timeout in the audio fabric.
+
+	Solution is to always wait for the current DMA block transfer to complete. And then do SSP cleanup.
