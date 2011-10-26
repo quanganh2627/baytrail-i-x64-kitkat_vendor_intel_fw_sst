@@ -118,3 +118,14 @@ October 24 2011: Lakshmi N Vinnakota : Audio FW Ver.03.00.20
 	DMA burst timeout in the audio fabric.
 
 	Solution is to always wait for the current DMA block transfer to complete. And then do SSP cleanup.
+October 26 2011: Lakshmi N Vinnakota : Audio FW Ver.03.00.21
+	BZ 13024 - In LPE FW v3.0.20, capture stream I/O errors are observed 
+	Whenever DROP is received for either playback or capture stream, audio FW 
+	will stop the DMA only after the current block transfer is complete. But
+	if a START stream is received before the DMA completes, then a race condn
+	occurs and renderer/capturer pipeline stalls. Also for playback stream, if
+	the LINK_UP response is delayed by more than 4ms, then it was stalling the
+	renderer pipeline.
+	Solution is to identify these two conditions clearly and restart the 
+	renderer/capturer pipeline.
+
