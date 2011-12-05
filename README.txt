@@ -128,4 +128,17 @@ October 26 2011: Lakshmi N Vinnakota : Audio FW Ver.03.00.21
 	renderer pipeline.
 	Solution is to identify these two conditions clearly and restart the 
 	renderer/capturer pipeline.
+December 5 2011: Rohit K Sindhu : Audio FW Ver.03.00.22
+        BZ 13431 - Video capture if stopped before 1 sec/2sec, stop gets delayed and
+        video clip of length 10 sec/11 sec is captured
+        BZ 13744 - [Camera]shutter sound doesn't work after tapping shutter many times
+        BZ 14443 - [Camera] Have no shutter voice during burst capturing
+        BZ 16119 - PR3 can't capture one video after pressed power button twice
+
+        Whenever DROP is received audio FW will stop the DMA only after the current
+        block transfer is complete. But if a START stream is received before the DMA
+        completes, then a race condn occurs and playback/renderer pipeline stalls. The
+        playback i/o error was causing capture i/o error in case of video recording.
+
+        Fix is to stop renderer/capturer only when stream is freed and not in drop.
 
