@@ -142,3 +142,16 @@ December 5 2011: Rohit K Sindhu : Audio FW Ver.03.00.22
 
         Fix is to stop renderer/capturer only when stream is freed and not in drop.
 
+December 8 2011: Rohit K Sindhu : Audio FW Ver.03.00.23
+	BZ 7949 - EQ config and IIR Section Count parameters are not independent
+	If number of IIR sections are more than 1 then FIR filter can not be enabled.
+	So in this case number of IIR filter section and FIR filter status are
+	dependent on each other. So 2 bytes for number of IIR filter section were
+	moved from IIR filter coefficients to channel configuration where FIR enable
+	status, IIR enable status and number of IIR sections were ored with each other
+
+	BZ 16871 - Increase Maximum Gain for volume control library for Customer
+	issue during WW50.
+	Maximum gain supported by volume control library has to be increased to 25dB
+	from 18dB, in oder to match Google specs. New volume control library has
+	been integrated with LPE.
