@@ -155,3 +155,15 @@ December 8 2011: Rohit K Sindhu : Audio FW Ver.03.00.23
 	Maximum gain supported by volume control library has to be increased to 25dB
 	from 18dB, in oder to match Google specs. New volume control library has
 	been integrated with LPE.
+
+December 19 2011: Rohit K Sindhu : Audio FW Ver.03.00.24
+	Bug 15936 - [Audio] Streaming sound becomes abnormal after recording with 
+	Sound Recorder. This was caused due to un-initialization of variable which 
+	retains old value resulting noisy playback.The problem was found during
+	klocwork analysis of the LPE code.
+
+	Bug 16834 - crash when applying less than 32 taps in equalizer FIR filter.
+	There was a bug in Mono and Stereo EQ modules, that when the number of taps
+	for FIR filter was changed, FIR delay field was not updated in the set_param() 
+	function. This was causing memory corruption inside the MONO EQ assembly code.
+
