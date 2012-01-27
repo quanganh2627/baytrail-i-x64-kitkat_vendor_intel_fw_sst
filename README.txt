@@ -167,3 +167,21 @@ December 19 2011: Rohit K Sindhu : Audio FW Ver.03.00.24
 	for FIR filter was changed, FIR delay field was not updated in the set_param() 
 	function. This was causing memory corruption inside the MONO EQ assembly code.
 
+January 2, 2012:  Sanyog Kale : Audio FW ver 03.00.25
+	Bug 18108 - [IMAGING] Shutter sound not heard when taking a photo.
+
+	The issue was with WAITI implementation in firmware due to which in some
+	cases firmware stuck in WAITI and delays coming out of WAITI resulting into
+	no audio. Currently WAITI is disabled in firmware and issue is not observed.
+
+January 16, 2012: Sanyog Kale : Audio FW ver 03.00.26
+	Bug 20210 - Audio Firmware doesnt Respond to IPC messages within 5 secs.
+	The issue was with WAITI implementation in firmware due to which in some
+	cases firmware stuck in WAITI and delays coming out of WAITI resulting into
+	no audio. This issue with WAITI is fixed in firmware no more issues observed
+	with WAITI implemented.
+
+Feb 02 2012: KP, Jeeja : Audio FW Ver.04.00.01
+	BZ: 15274 15273 - Add support to enable Audio for Clovertrail
+	Added master mode SSP changed for CLV
+
