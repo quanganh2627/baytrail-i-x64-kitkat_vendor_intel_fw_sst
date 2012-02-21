@@ -2,8 +2,6 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/fw_sst.bin:system/etc/firmware/fw_sst.bin
-PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/fw_sst_082f.bin:system/etc/firmware/fw_sst_082f.bin
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/fw_sst_08e7.bin:system/etc/firmware/fw_sst_08e7.bin
