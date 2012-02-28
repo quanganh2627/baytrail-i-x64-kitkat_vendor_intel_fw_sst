@@ -185,3 +185,7 @@ Feb 02 2012: KP, Jeeja : Audio FW Ver.04.00.01
 	BZ: 15274 15273 - Add support to enable Audio for Clovertrail
 	Added master mode SSP changed for CLV
 
+Feb 28 2012: Thomas, Tigi : Audio FW Ver.04.00.02
+	BZ: 25454 - Adding the intial PFW framework support for the CLV FW.
+	MFDR3 code base with SSP Master mode changes.
+
