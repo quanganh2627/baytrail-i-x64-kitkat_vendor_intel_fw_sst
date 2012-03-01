@@ -189,3 +189,11 @@ Feb 28 2012: Thomas, Tigi : Audio FW Ver.04.00.02
 	BZ: 25454 - Adding the intial PFW framework support for the CLV FW.
 	MFDR3 code base with SSP Master mode changes.
 
+March 01 2012: Sanyog Kale : Audio FW ver 03.00.29
+	BZ: 25920 - CTS Overflow check regression with Audio FW 3.0.28 
+	(patch 36412).
+	This version of LPE FW reverts the changes done in FW v3.0.28
+	for the capture glich workaround and goes back to the workaround
+	provided in FW v3.0.27.
+	This patch has been rebased from R2 . Combining 3.0.27 and 3.0.28
+	This patch has been rebased by Arulselvan M
