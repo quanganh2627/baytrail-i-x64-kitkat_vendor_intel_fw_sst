@@ -197,3 +197,11 @@ March 01 2012: Sanyog Kale : Audio FW ver 03.00.29
 	provided in FW v3.0.27.
 	This patch has been rebased from R2 . Combining 3.0.27 and 3.0.28
 	This patch has been rebased by Arulselvan M
+
+March 06 2012: Sanyog Kale : Audio FW ver 03.00.30
+	BZ 23047  - Add support for Stereo to Mono downmix for Mono speaker 
+	support - CR 93041 
+	Firmware will always receive stereo data from Android, depending 
+	on the IHF device on the platform, it shall render stereo data 
+	for stereo IHF or downmix to Mono for Mono IHF. 
+	Platform info will be provided by Audio driver.
