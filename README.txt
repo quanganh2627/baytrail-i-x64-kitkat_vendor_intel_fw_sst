@@ -169,7 +169,6 @@ December 19 2011: Rohit K Sindhu : Audio FW Ver.03.00.24
 
 January 2, 2012:  Sanyog Kale : Audio FW ver 03.00.25
 	Bug 18108 - [IMAGING] Shutter sound not heard when taking a photo.
-
 	The issue was with WAITI implementation in firmware due to which in some
 	cases firmware stuck in WAITI and delays coming out of WAITI resulting into
 	no audio. Currently WAITI is disabled in firmware and issue is not observed.
@@ -184,6 +183,27 @@ January 16, 2012: Sanyog Kale : Audio FW ver 03.00.26
 Feb 02 2012: KP, Jeeja : Audio FW Ver.04.00.01
 	BZ: 15274 15273 - Add support to enable Audio for Clovertrail
 	Added master mode SSP changed for CLV
+
+February 15 2012: Sanyog Kale : Audio FW ver 03.00.27
+	Bug 23764 - Audio Firmware Workaround needed to mitigate glitch at 
+	starting of capture produced by MSIC hardware.
+	The initial glitch in capture stream is caused by MSIC hardware. 
+	Workaround is done in LPE firmware by lowering MIC gain to 0dB 
+	for 80ms at starting of capture stream and then reverting back 
+	original gain set by PFW, till hardware issue is root caused.
+
+February 23 2012: Sanyog Kale : Audio FW ver 03.00.28
+	Bug 24061 - Fabric error after sound+vibrate notification.
+	After S3, any shared SRAM region has to be initialized before being
+	read due to SRAM ECC silicon issue. Audio has 72k of SRAM region 
+	reserved for Audio use. It is observed that very randomly IA read/write
+	access to SRAM Audio region may be byte accesses which can result 
+	in SRAM ECC error. 
+	Since the IA access cannot be guaranteed to be always 32-bit, 
+	workaround is provided in Audio Firmware to initialize whole of 
+	72K Audio SRAM region which will improve stability.
+	Further this version of FW has minor improvements for the fix 
+	provided in FW v3.0.27.
 
 Feb 28 2012: Thomas, Tigi : Audio FW Ver.04.00.02
 	BZ: 25454 - Adding the intial PFW framework support for the CLV FW.
@@ -205,3 +225,17 @@ March 06 2012: Sanyog Kale : Audio FW ver 03.00.30
 	on the IHF device on the platform, it shall render stereo data 
 	for stereo IHF or downmix to Mono for Mono IHF. 
 	Platform info will be provided by Audio driver.
+
+March 13 2012: Sanyog Kale : Audio FW ver 03.00.31
+	Bug 16652 - click sound is heard beginning of the
+        recorded file <using alsa_arecord>
+	Bug 26989 - CTS verifier gain linearity passes inconsistently
+	depending on HW / FW version
+	The initial glitch in capture stream is caused by MSIC hardware due to
+	large settling time of 900ms. 
+	The initial WA provided for removing the glitch was not stable and
+	affected the Gain linearity tests.
+	New Gain control algorithm added in LPE firmware which implements
+	ramp time of 2ms per dB. This removes the initial glitch completely
+	and also ensures that Gain linearity is not affected. This firmware
+	passes all CTS test cases whether run together or independently.
