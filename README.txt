@@ -239,3 +239,9 @@ March 13 2012: Sanyog Kale : Audio FW ver 03.00.31
 	ramp time of 2ms per dB. This removes the initial glitch completely
 	and also ensures that Gain linearity is not affected. This firmware
 	passes all CTS test cases whether run together or independently.
+
+March 20 2012: Sanyog Kale : Audio FW ver 03.00.32
+	Bug 20263 - DRC needed to mitigate poor volume output from loudspeaker.
+	Currently the output volume of IHF is very low. DRC (Dynamic Range 
+	Compression) Algorithm is integrated in Audio firmware in IHF path 
+	which will boost up volume level of IHF device.
