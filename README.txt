@@ -245,3 +245,12 @@ March 20 2012: Sanyog Kale : Audio FW ver 03.00.32
 	Currently the output volume of IHF is very low. DRC (Dynamic Range 
 	Compression) Algorithm is integrated in Audio firmware in IHF path 
 	which will boost up volume level of IHF device.
+
+March 22 2012: Tigi Thomas : Audio FW ver 05.02.00
+       Bug 28160 -  Audio Firmware for Listen to Music - IHF.
+       Bug 25438 -  CPA-P_CAP-61073 Dynamic Range Compression (DRC) on 
+       embedded loudspeaker.
+       IHF Playback stream is enabled in the Firmware by using the mixer controls IPC
+       messages. 
+       DRC (Dynamic Range Compression) Algorithm is integrated in Audio firmware 
+       in IHF path which will boost up volume level of IHF.
