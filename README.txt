@@ -254,3 +254,24 @@ March 22 2012: Tigi Thomas : Audio FW ver 05.02.00
        messages. 
        DRC (Dynamic Range Compression) Algorithm is integrated in Audio firmware 
        in IHF path which will boost up volume level of IHF.
+
+May 03 2012: Sanyog Kale : Audio FW Ver 03.00.33
+	Bug 32085 - Robust error recovery mechanism in driver/fw during 
+	simultaneous playback and capture usecase.
+	Bug 33738 - During simultaneous Playback and Capture use-case causing 
+	broken pipe errors (-EPIPE).
+	Bug 34415 - DRC algorithm introduced 20kHz harmonic wave in customer's 
+	phone.
+	In rarest scenario, the previous stream allocated by firmware is not 
+	freed up, due to which new alloc stream returns stream in use error. 
+	In this scenario error handling mechanism is implemented in firmware 
+	by which firmware makes sure it free up all stream context when driver
+        send free as part of error recovery mechanism.
+	In simultanoues playback and capture scenarios, lots of broken pipe 
+	errors are observed due to which at certain point firmware pipeline 
+	stalls. This is fixed by allowing firmware to run at maximum frequency 
+	and sit into WAITI when idle.
+	With DRC introduced in IHF path, 20Khz harmonic waves are observed in 
+	MONO IHF speaker. This is fixed by configuring DRC algorithm and all 
+	other post processing algorithms in IHF path to MONO or STEREO based 
+	on device type.
