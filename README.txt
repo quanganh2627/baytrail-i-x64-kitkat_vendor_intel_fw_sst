@@ -275,3 +275,13 @@ May 03 2012: Sanyog Kale : Audio FW Ver 03.00.33
 	MONO IHF speaker. This is fixed by configuring DRC algorithm and all 
 	other post processing algorithms in IHF path to MONO or STEREO based 
 	on device type.
+
+May 11 2012: Tigi Thomas : Audio FW ver 05.02.01
+        Bug 34409 - CTP: Sound recording works first 2 sec and jump to 31 sec.
+        In the FW the mixer mask is cleared during the Drop command from IA.
+        Driver does not provide the mixer controls across Drop and Start
+        commands. This results in the WriteError on alsa and resulted in this
+        issue. The delay of 30 Seconds is because of the slow recovery on
+        Alsa. 
+	This FW patch will fix the write error from Alsa and henceforth
+        never triggers the alsa recovery.
