@@ -258,8 +258,8 @@ March 22 2012: Tigi Thomas : Audio FW ver 05.02.00
 May 03 2012: Sanyog Kale : Audio FW Ver 03.00.33
 	Bug 32085 - Robust error recovery mechanism in driver/fw during 
 	simultaneous playback and capture usecase.
-	Bug 33738 - During simultaneous Playback and Capture use-case causing 
-	broken pipe errors (-EPIPE).
+	Bug 33232 - [R3] [AUDIO] Audio is lost during the Tom Cat 
+	application(write I/O error).
 	Bug 34415 - DRC algorithm introduced 20kHz harmonic wave in customer's 
 	phone.
 	In rarest scenario, the previous stream allocated by firmware is not 
@@ -285,3 +285,14 @@ May 11 2012: Tigi Thomas : Audio FW ver 05.02.01
         Alsa. 
 	This FW patch will fix the write error from Alsa and henceforth
         never triggers the alsa recovery.
+
+May 14 2012: Sanyog Kale : Audio FW ver 03.00.34
+	Bug 27891 - Power optimization: Betterment for power-saving during MP3
+	playback (LPE buffer size increments).
+	Bug 34782 - Channel flip during stereo processing by DRC.
+	Period sizes for playback stream are changed from 23ms to 46ms as part 
+	of power optimization. To accommodate this changes, LPE firmware input 
+	buffer sizes are incremented and align to perform bigger size DMA's 
+	which will reduce wakes to IA resulting into power optimization. 
+	With DRC implemented in IHF playback path, Channel flip was found 
+	when processing stereo data which got fixed with latest DRC library. 
