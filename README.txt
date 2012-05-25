@@ -295,4 +295,17 @@ May 14 2012: Sanyog Kale : Audio FW ver 03.00.34
 	buffer sizes are incremented and align to perform bigger size DMA's 
 	which will reduce wakes to IA resulting into power optimization. 
 	With DRC implemented in IHF playback path, Channel flip was found 
-	when processing stereo data which got fixed with latest DRC library. 
+	when processing stereo data which got fixed with latest DRC library.
+
+May 25 2012: Tigi Thomas : Audio FW ver 05.02.02
+	Bug 38420 - DRC Libray is creating the channel swap on IHF pipeline
+	and DRC library generates noise across save and restore
+	Bug 38421 - Volume library is not setting the correct parameters
+	across Save and restore context of FW
+	Bug 34412 - Capture gets noisy because of MSB bit loss from SSP
+	Bug 30338 - AMIC,DMIC Recording is too noisy on Sound Recorder
+	In the FW, CTP A0 SSP support is added. This will resolve the noise
+	in the capture path. Fw is not backward compatible to CLV HW.Fixes
+	are done in the volume library and DRC to take care of set and get
+	all params across context save/restore calls.
+	This FW patch will fix noise in Capture and IHF playback in CTP platfrom.
