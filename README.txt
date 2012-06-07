@@ -309,3 +309,10 @@ May 25 2012: Tigi Thomas : Audio FW ver 05.02.02
 	are done in the volume library and DRC to take care of set and get
 	all params across context save/restore calls.
 	This FW patch will fix noise in Capture and IHF playback in CTP platfrom.
+
+June 07 2012: Anand  Jyoti: Audio FW ver 6.0.0 added
+	Bug 22197 - LPE Audio Firmware with basic Audio playback and Capture
+	functionality working
+	i. Audio Firmware with basic audio playback and capture verified on CR4/HVP
+	with alsa applications for Headset and Analog Mic
+	ii. Pre/post processing are NOT supported
