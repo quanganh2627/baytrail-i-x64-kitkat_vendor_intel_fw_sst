@@ -316,3 +316,12 @@ June 07 2012: Anand  Jyoti: Audio FW ver 6.0.0 added
 	i. Audio Firmware with basic audio playback and capture verified on CR4/HVP
 	with alsa applications for Headset and Analog Mic
 	ii. Pre/post processing are NOT supported
+
+June 10 2012: Tigi Thomas : Audio FW ver 05.03.00
+	Bug 41130 - Enabling Offload Support for Mp3 and AALC with Tiny
+	Compressed Interface.
+	In this FW, Mp3 and AAC-LC offload features are added with Tiny
+	Compressedinterface. This usecase is for enabling lowpower audio
+	playback.
+	This FW patch will add offload feature for MP3 and AAC-LC in
+	CTP platform.
