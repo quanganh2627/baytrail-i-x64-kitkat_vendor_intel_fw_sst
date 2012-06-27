@@ -325,3 +325,14 @@ June 10 2012: Tigi Thomas : Audio FW ver 05.03.00
 	playback.
 	This FW patch will add offload feature for MP3 and AAC-LC in
 	CTP platform.
+
+June 12 2012: Dinesh Mirche : Audio FW ver 03.00.35
+
+        Bug 38078 - Dual Mono implementation for IHF streams when IHF stream
+        is configured as Mono.
+        If IHF pipeline is configured to Mono, renderer module copies the
+        content of Left channel on to Right channel to make it as a dual mono.
+
+        In corner scenarios delay field could become negative.
+        This firmware fixes this issue by validating delay field before
+        updating it.
