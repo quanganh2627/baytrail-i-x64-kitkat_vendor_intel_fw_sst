@@ -336,3 +336,15 @@ June 12 2012: Dinesh Mirche : Audio FW ver 03.00.35
         In corner scenarios delay field could become negative.
         This firmware fixes this issue by validating delay field before
         updating it.
+
+June 22 2012: Dinesh Mirche, Sanyog Kale: Audio FW ver 03.00.36
+
+        Bug 42404 - Camera ANR issue (CPU DAI prepare error - Audio FW)
+        In corner conditions, memory access was out of bound in equalizer library
+        causing memory corruption in LPE memory.
+        Fix equalizer code to make sure the memory access are in bound.
+
+        In corner cases, there is a possibility firmware may stuck in WAITI mode
+        due to incorrect interrupt mask/unmask.
+        Fix is to handle interrupt mask/unmask properly to avoid LPE stuck in
+        WAITI mode.
