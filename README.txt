@@ -389,3 +389,15 @@ August 22 2012: Tigi Thomas : Audio FW ver 05.04.00
 	up/Down is implemented and the provision to go to 19.2Mhz is added.
 	This FW patch has changes to support optimized communication between
 	SCU & LPE and support for 19.2 in PCM is added.
+
+July 08 2012: Anand B Jyoti : Audio FW ver 6.0.2
+	Bug 44349 - Unifying Data structure for CTP and MRFLD for AAC
+	set params
+	In this FW, AAC-LC data stucture is unitifed with CTP
+	This FW patch unify the AACLC data struture with CTP and MFRLD
+        Bug 45504 - Audio playback fails after doing record
+        The SSP was getting disabled before DMA during drop stream causing DMA
+        channel hung.
+        The IIPC message to renderer is now sent only after the DMA transfer is
+        complete. This ensures the SSP will be disabled only after DMA channel
+        is stopped.
