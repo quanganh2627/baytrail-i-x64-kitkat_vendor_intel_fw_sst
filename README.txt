@@ -357,3 +357,15 @@ July 23 2012: Dinesh Mirche : Audio FW ver 03.00.37
 	This firmware contains changes related to dumping the debug data during
 	firmware exceptions. Firmware dumps the data to SRAM location.  The dump
 	includes Exception cause, vector address, program counters etc
+July 19 2012: Tigi Thomas : Audio FW ver 05.03.01
+	Bug 44108 - PSI Recorder has crashed when ANR on intel.psi_recorder
+	Bug 47518 - Time stamp precision reported by FW to Driver is losing
+	precision for offload 44.1Khz streams
+	Bug 47560 - AAC Decoder should decode only AACLC components and skip
+	the V1 and V2 components
+	In the FW, the precision of time stamp calculations during offload is
+	improved and AACLC decoder will decode only AACLC component and will
+	skip V1 and V2 components.
+	This FW patch will improves the precision of time stamp calculation in
+	offload usecase and AACLC decode will decode only AACLC component in
+	stream.
