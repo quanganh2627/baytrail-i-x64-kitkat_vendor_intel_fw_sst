@@ -344,7 +344,16 @@ June 22 2012: Dinesh Mirche, Sanyog Kale: Audio FW ver 03.00.36
         causing memory corruption in LPE memory.
         Fix equalizer code to make sure the memory access are in bound.
 
-        In corner cases, there is a possibility firmware may stuck in WAITI mode
-        due to incorrect interrupt mask/unmask.
-        Fix is to handle interrupt mask/unmask properly to avoid LPE stuck in
-        WAITI mode.
+	In corner cases, there is a possibility firmware may stuck in WAITI mode
+	due to incorrect interrupt mask/unmask.
+	Fix is to handle interrupt mask/unmask properly to avoid LPE stuck in
+	WAITI mode.
+
+July 23 2012: Dinesh Mirche : Audio FW ver 03.00.37
+
+	Bug 46399 - MTBF Audio Firmware timeout during context restore causesi
+	the cpu DAI error
+
+	This firmware contains changes related to dumping the debug data during
+	firmware exceptions. Firmware dumps the data to SRAM location.  The dump
+	includes Exception cause, vector address, program counters etc
