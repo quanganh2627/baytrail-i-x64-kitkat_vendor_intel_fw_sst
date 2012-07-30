@@ -369,3 +369,15 @@ July 19 2012: Tigi Thomas : Audio FW ver 05.03.01
 	This FW patch will improves the precision of time stamp calculation in
 	offload usecase and AACLC decode will decode only AACLC component in
 	stream.
+
+July 30 2012: Tigi Thomas : Audio FW ver 05.03.02
+	Bug 36135 - Sound is too low when playing recorded sound.
+	Bug 49169 - Strereo Equalizer accesses memory region beyond the
+	allocated range.
+	In this FW, new volume library is added to have boost to the capture
+	path.Memory curruption issue in Mono/Stereo equalizer is fixed.
+	Downmixer library with bug fixes are added. Save/Restore context
+	support for Capture pipeline is added in FW.
+	This FW patch has changes to boost capture volume, bug fixes on
+	Equalizer, Downmixer libs and has support for Save/Restore context
+	of capture pipeline
