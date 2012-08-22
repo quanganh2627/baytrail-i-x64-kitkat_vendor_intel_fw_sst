@@ -381,3 +381,11 @@ July 30 2012: Tigi Thomas : Audio FW ver 05.03.02
 	This FW patch has changes to boost capture volume, bug fixes on
 	Equalizer, Downmixer libs and has support for Save/Restore context
 	of capture pipeline
+
+
+August 22 2012: Tigi Thomas : Audio FW ver 05.04.00
+	Bug 35060 - Enable LPE Firmware support for MP3 decoding at 19.2 MHz
+	In this FW, new optimized communication between SCU and LPE on Link
+	up/Down is implemented and the provision to go to 19.2Mhz is added.
+	This FW patch has changes to support optimized communication between
+	SCU & LPE and support for 19.2 in PCM is added.
