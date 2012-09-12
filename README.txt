@@ -390,7 +390,7 @@ August 22 2012: Tigi Thomas : Audio FW ver 05.04.00
 	This FW patch has changes to support optimized communication between
 	SCU & LPE and support for 19.2 in PCM is added.
 
-July 08 2012: Anand B Jyoti : Audio FW ver 6.0.2
+September 12 2012: Anand B Jyoti : Audio FW ver 6.0.2
 	Bug 44349 - Unifying Data structure for CTP and MRFLD for AAC
 	set params
 	In this FW, AAC-LC data stucture is unitifed with CTP
@@ -401,3 +401,12 @@ July 08 2012: Anand B Jyoti : Audio FW ver 6.0.2
         The IIPC message to renderer is now sent only after the DMA transfer is
         complete. This ensures the SSP will be disabled only after DMA channel
         is stopped.
+
+September 13 2012: vijay srinivas : Audio FW ver 05.04.02
+	Bug 57117 - Audio volume change does not have any effect 
+	for codec offload usecase when done continuously 
+	In this FW, the IPC scratch buffer is split into two.One for the High 
+	priority IPC messages and the other for the low priority IPC messages.
+	This FW patch has changes to split the IPC scratch buffer into two.
+	One for high priority messages and one for the low priority messages.
+
