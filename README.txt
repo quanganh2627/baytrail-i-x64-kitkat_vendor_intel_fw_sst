@@ -402,7 +402,7 @@ September 12 2012: Anand B Jyoti : Audio FW ver 6.0.2
         complete. This ensures the SSP will be disabled only after DMA channel
         is stopped.
 
-September 13 2012: vijay srinivas : Audio FW ver 05.04.02
+September 13 2012: vijay srinivas : Audio FW ver 05.04.01
 	Bug 57117 - Audio volume change does not have any effect 
 	for codec offload usecase when done continuously 
 	In this FW, the IPC scratch buffer is split into two.One for the High 
@@ -410,3 +410,10 @@ September 13 2012: vijay srinivas : Audio FW ver 05.04.02
 	This FW patch has changes to split the IPC scratch buffer into two.
 	One for high priority messages and one for the low priority messages.
 
+September 14 2012: vijay srinivas : Audio FW ver 05.04.02
+        Bug 57273 - LPMp3 decode:-Switch the clock of LPE between 19.2 and 50Mhz 
+        based on the Mp3 audio sampling rate
+        In this FW, the LPE clock frequency switching is implemented based on 
+        input sampling rate of Mp3.Adding support for RAW HEAACv1 and HEAACv2.
+        This FW patch has changes to support Mp3,48Khz at 19.2Mhz.Also adding support
+        for RAW HEAACv1 and HEAACv2 offload playback.
