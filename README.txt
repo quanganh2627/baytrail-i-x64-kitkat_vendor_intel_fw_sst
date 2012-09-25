@@ -417,3 +417,10 @@ September 14 2012: vijay srinivas : Audio FW ver 05.04.02
         input sampling rate of Mp3.Adding support for RAW HEAACv1 and HEAACv2.
         This FW patch has changes to support Mp3,48Khz at 19.2Mhz.Also adding support
         for RAW HEAACv1 and HEAACv2 offload playback.
+
+September 27 2012: vijay srinivas : Audio FW ver 05.04.04
+        Bug 55251 - Audio fabric error (adma initiator agent)
+        In this FW, the DDR link down message will be sent only if all 
+        the DDR DMA transfers are complete.
+        This FW patch has changes to enable sending DDR link down messages 
+        only if all the DDR DMA transfers are complete.
