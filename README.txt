@@ -424,12 +424,3 @@ September 27 2012: vijay srinivas : Audio FW ver 05.04.04
         the DDR DMA transfers are complete.
         This FW patch has changes to enable sending DDR link down messages 
         only if all the DDR DMA transfers are complete.
-
-September 17 2012: Dinesh Mirche : Audio FW ver 05.03.00.39
-
-	Bug 36770 - Side-tone activation on LPE (VOIP)
-
-	Activate the side-tone on Lexington for VOIP use case,when EP
-	or headset/headphone are selected.
-	Firmware uses slot 0 (Left channel) data in a capture path for
-	side tone generation.
