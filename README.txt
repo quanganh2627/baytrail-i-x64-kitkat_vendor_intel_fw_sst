@@ -424,3 +424,11 @@ September 27 2012: vijay srinivas : Audio FW ver 05.04.04
         the DDR DMA transfers are complete.
         This FW patch has changes to enable sending DDR link down messages 
         only if all the DDR DMA transfers are complete.
+
+November 06 2012: vijay srinivas : Audio FW ver 05.04.05
+        Bug 59825 - [CTP][MTBF] ANR happens on com.android.soundrecorder: 
+        keyDispatchingTimedOut (android.media.MediaRecorder.stop) 
+        In this FW, the the FW ,the delay logic is calibrated so that the DMA 
+        channels are getting suspending properly when clock switching happens.
+        This FW patch has changes to calibrate the delay values while suspending 
+        the DMA channels during clock switching.
