@@ -432,3 +432,12 @@ November 06 2012: vijay srinivas : Audio FW ver 05.04.05
         channels are getting suspending properly when clock switching happens.
         This FW patch has changes to calibrate the delay values while suspending 
         the DMA channels during clock switching.
+
+November 06 2012: vijay srinivas : Audio FW ver 05.05.00
+        Bug 59507 - Ensure LPE-FW is able to decode 44.1kHz MP3,
+        apply SRC and render audio with in LPE CPU cycles of 19.2MHz
+        In this FW, the firmware modules together with DSP libraries are 
+        optimised to decode and render Mp3 44.1Khz file at 19.2Mhz.
+        This FW patch has changes to the firmware modules together with DSP 
+        libraries to decode and render Mp3 44.1Khz file at 19.2Mhz.
+
