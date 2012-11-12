@@ -441,3 +441,11 @@ November 06 2012: vijay srinivas : Audio FW ver 05.05.00
         This FW patch has changes to the firmware modules together with DSP 
         libraries to decode and render Mp3 44.1Khz file at 19.2Mhz.
 
+November 11 2012: vijay srinivas : Audio FW ver 05.05.01
+        Bug 59507 - Stereo Equalizer consumes more cycles on IHF path
+        In this FW, the persistent memory for stereo equalizer is made 
+        to be 4 byte aligned.
+        This FW patch has changes to the persistant memory of stereo equalizer
+        to make it 4 byte alligned.
+
+
