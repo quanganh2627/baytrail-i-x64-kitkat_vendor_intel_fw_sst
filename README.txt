@@ -498,3 +498,18 @@ November 28 2012:vijay srinivas : AAC decoder library
         The decoder patch has changes which includes the new aac core 
         libraries from Tensilica.
 
+November 28 2012:vijay srinivas : Audio FW ver 05.05.05
+        Bug 28218 - Audio channels swap and get corrupted when codec 
+        is set to loopback
+        In this FW,the changes are made to the SSP so that both Tx and 
+        Rx are enabled always when either playback or capture starts and
+        disabled when there are no more active streams either on playback
+        or capture path.
+        This FW patch has changes to enable both the SSP Tx and 
+        Rx always when either playback or capture starts and disable them 
+        when there are no more active streams either on playback or capture 
+        path.
+
+Nov 29 2012: Vinod Koul: Audio FW Ver 3.0.7.1
+	Bug 71662 - Audio FW support for merrifield vv board
+	Resolved SSP Channel swap issue in Rx.
