@@ -449,3 +449,8 @@ November 11 2012: vijay srinivas : Audio FW ver 05.05.01
         to make it 4 byte alligned.
 
 
+November 23 2012: Arulselvan : Audio FW Ver 05.04.04
+	Revert of Firmware patches 05.04.05 , 05.05.00 and 05.05.01
+	This patch is a revert of above 3 firmware versions so as make CTP stable 
+	Based on WW44 Build.
+
