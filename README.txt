@@ -454,3 +454,39 @@ November 23 2012: Arulselvan : Audio FW Ver 05.04.04
 	This patch is a revert of above 3 firmware versions so as make CTP stable 
 	Based on WW44 Build.
 
+November 26 2012: vijay srinivas : Audio FW Ver 05.05.04
+	Bug 59825 - ANR happens on com.android.soundrecorder: 
+        keyDispatchingTimedOut (android.media.MediaRecorder.stop)
+        Bug 59507 - Ensure LPE-FW is able to decode 44.1kHz MP3,
+        apply SRC and render audio with in LPE CPU cycles of 19.2MHz
+        Bug 67666 - Stereo Equalizer consumes more cycles on IHF path
+        In this FW, the persistent memory for stereo equalizer is made 
+        to be 4 byte aligned.
+        Bug 63362 - Bug 63362 - UI stability test: Audio Fabric adma_iahb 
+	happened running monkey test on music app and sound recorders.
+        Bug 68425 - adma_iahb FABRICERR
+        Bug 68200 - sst wait timeout issue happens and several ANR are 
+        occured (during logs: "AudioStreamOutAlsa: writeFrames: 
+        wait_pcm timeout!")
+        In this FW,following changes are made.a)The delay logic is calibrated
+        so that the DMA channels are getting suspending properly when clock 
+        switching happens.
+        b)The firmware modules together with DSP libraries are 
+        optimised to decode and render Mp3 44.1Khz file at 19.2Mhz.
+        c)The persistent memory for stereo equalizer is made 
+        to be 4 byte aligned
+        d)The changes are made to suspend the DMA channels when the codec 
+	download is in progress and unsuspend when the download is complete
+        e)The changes are made to suspend the DMA but not start when the
+        DMA is in suspended state and a new DMA request is sent.The DMA is 
+        prevented from restaring if the free is invoked after the DMA MEM to
+        MEM is initiated.
+        This FW patch has changes to calibrate the delay values while 
+        suspending the DMA channels during clock switching,the firmware modules 
+        together with DSP libraries to decode and render Mp3 44.1Khz file 
+        at 19.2Mhz,changes to the persistant memory of stereo equalizerto make 
+        it 4 byte alligned,changes to suspend DMA channels when codec download
+        is in progress and unsuspend the DMA channels when download is 
+        complete,changes to suspend DMA channels but not start when the DMA
+        is in suspended state and a new DMA request is made through start call.
+
