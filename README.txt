@@ -490,3 +490,11 @@ November 26 2012: vijay srinivas : Audio FW Ver 05.05.04
         complete,changes to suspend DMA channels but not start when the DMA
         is in suspended state and a new DMA request is made through start call.
 
+November 28 2012:vijay srinivas : AAC decoder library
+        Bug 68238 - Audio Fabric and IPANIC happened during switching 
+        between Double Twist Player and Default google Music Player(aes_iahb)
+        In this decoder binary,the new core libraries of core aac decoder is
+        integrated from Tensilica code drop.
+        The decoder patch has changes which includes the new aac core 
+        libraries from Tensilica.
+
