@@ -1,11 +1,9 @@
 LOCAL_PATH:= $(call my-dir)
 
-# ISP and FR
-camera_libs := shisp_2400b0_v21.bin
-
-# HDR v2 FW CSS2.1 ISP2400B0
+# Audio Firmware
 audio_firmware := fw_sst_0f28_ssp0.bin fw_sst_0f28_ssp2.bin
 
+# Boilerplate
 define copy-firmware
 $(foreach t,$(1), \
   $(eval include $(CLEAR_VARS)) \
@@ -20,15 +18,6 @@ $(foreach t,$(1), \
 )
 endef
 
+# Copy Firmware
 $(call copy-firmware, $(audio_firmware))
-
-# build HDR v2 FW CSS2.1 ISP2400B0
-#include $(CLEAR_VARS)
-#LOCAL_MODULE := hdr_v2_fw_css21_2400b0
-#LOCAL_MODULE_TAGS := optional
-#LOCAL_REQUIRED_MODULES := $(hdr_v2_css21_2400b0_libs)
-#include $(BUILD_PHONY_PACKAGE)
-
-#$(call camera-prebuilt-boilerplate, \
-    $(hdr_v2_css21_2400b0_libs))
 
