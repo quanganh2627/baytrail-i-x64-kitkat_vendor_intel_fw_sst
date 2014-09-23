@@ -1,7 +1,7 @@
 LOCAL_PATH:= $(call my-dir)
 
 # Audio Firmware
-audio_firmware := fw_sst_0f28_ssp0.bin fw_sst_0f28_ssp2.bin
+audio_firmware := fw_sst_0f28_ssp0.bin fw_sst_0f28_ssp2.bin fw_sst_22a8.bin
 
 # Boilerplate
 define copy-firmware
